@@ -1,0 +1,42 @@
+export const projectsData = [
+  {
+    id: "thm-pentesting-lab",
+    title: "Cybersecurity & Pentesting Lab",
+    category: "security",
+    description: "Laboratorio personal multi-entorno para práctica de seguridad ofensiva: auditoría web contra OWASP Juice Shop, reconocimiento y escaneo con Nmap y resolución de retos en TryHackMe (Jr Penetration Tester).",
+    tags: ["Docker", "Linux", "OWASP", "Nmap", "THM", "Bash"],
+    image: "/projects/thm-labs.webp",
+    github: "https://github.com/ivanmontesdeoca00",
+    featured: true,
+  },
+  {
+    id: "pos-management-system",
+    title: "Sistema POS & Facturación Local",
+    category: "development",
+    description: "Software de escritorio modular para gestión de órdenes, stock y cálculo de precios con personalización de aderezos y agregados. Desarrollado con persistencia relacional.",
+    tags: ["Python", "SQLite", "Tkinter", "Desktop"],
+    image: "/projects/pos-python.webp",
+    github: "https://github.com/ivanmontesdeoca00",
+    featured: true,
+  },
+  {
+    id: "java-oop-arcade",
+    title: "Simulaciones & Videojuegos en Java (POO)",
+    category: "development",
+    description: "Proyectos y aplicaciones gráficas orientadas a objetos implementando lógica de juego, colisiones, modularidad y persistencia local.",
+    tags: ["Java", "POO", "Greenfoot", "AWT"],
+    image: "/projects/java-projects.webp",
+    github: "https://github.com/ivanmontesdeoca00",
+    featured: false,
+  },
+  {
+    id: "docker-local-infrastructure",
+    title: "Infraestructura Local Multi-Contenedor",
+    category: "systems",
+    description: "Despliegue automatizado de entornos de base de datos aislados (PostgreSQL, MySQL) y herramientas de escaneo en macOS/Linux mediante Docker Compose.",
+    tags: ["Docker", "PostgreSQL", "MySQL", "Linux CLI"],
+    image: "/projects/docker-lab.webp",
+    github: "https://github.com/ivanmontesdeoca00",
+    featured: false,
+  }
+];
