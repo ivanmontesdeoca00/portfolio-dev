@@ -14,14 +14,21 @@ export const Hero = () => {
             <span className="text-xs font-mono text-gray-300 font-medium">Disponible para proyectos & roles Tech</span>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Iván Montes de Oca
-          </h1>
+          <div className="flex items-center gap-4 sm:gap-5">
+            <img
+              src="/projects/foto-personal.png"
+              alt="Iván Montes de Oca"
+              className="w-50 h-50 sm:w-50 sm:h-50 rounded-full object-cover border-2 border-cyber-emerald shadow-lg shadow-cyber-emerald/20 shrink-0"
+            />
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Iván Montes de Oca
+            </h1>
+          </div>
 
           <p className="text-lg sm:text-xl text-gray-400 font-normal leading-relaxed">
-            Especializado en <span className="text-cyber-emerald font-semibold">Seguridad Ofensiva (Pentesting)</span>, 
-            administración de sistemas <span className="text-white font-medium">Linux/Docker</span> y desarrollo de software orientado a objetos y soluciones de escritorio.
-          </p>
+            Especializandome en <span className="text-cyber-emerald font-semibold">Ciberseguridad (Pentesting)</span>, conocimientos solidos en <span className="text-cyber-emerald font-semibold">JAVA </span>,
+            administración de sistemas y bases de datos con <span className="text-white font-medium"> PostgreSQL, MySQL y Docker</span> y desarrollador Full Stack con <span className="text-cyan-400 font-semibold">JavaScript | ReactJs | NodeJs | Python</span>
+            </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
             <a
@@ -33,7 +40,7 @@ export const Hero = () => {
             </a>
 
             <a
-              href="https://github.com/ivanmontesdeoca00"
+              href="https://github.com/ivanmontesdeoca00?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-cyber-card border border-cyber-border hover:border-gray-500 text-gray-200 px-5 py-2.5 rounded-xl transition-all font-mono text-sm"
