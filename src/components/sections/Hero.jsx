@@ -2,7 +2,9 @@ import React from 'react';
 import { TerminalWindow } from '../ui/TerminalWindow';
 import { ArrowUpRight, Download, ShieldCheck, Code2 } from 'lucide-react';
 
-export const Hero = () => {
+// En la declaración del componente:
+export const Hero = ({ onNavigateProjects }) => {
+
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 px-4 flex justify-center bg-grid-pattern">
       <div className="w-full max-w-5xl grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
@@ -31,13 +33,13 @@ export const Hero = () => {
             </p>
 
           <div className="flex flex-wrap items-center gap-4 pt-2">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 bg-cyber-emerald text-black font-semibold px-5 py-2.5 rounded-xl hover:bg-emerald-400 transition-all font-mono text-sm shadow-lg shadow-cyber-emerald/20"
-            >
-              <Code2 size={18} />
-              <span>Ver Proyectos</span>
-            </a>
+           <button
+            onClick={onNavigateProjects}
+            className="inline-flex items-center gap-2 bg-cyber-emerald text-black font-mono font-semibold text-xs sm:text-sm px-5 py-3 rounded-xl hover:bg-emerald-400 transition-all shadow-lg shadow-cyber-emerald/20"
+          >
+            <span>&lt;/&gt; Ver Proyectos</span>
+          </button>
+
 
             <a
               href="https://github.com/ivanmontesdeoca00?tab=repositories"
