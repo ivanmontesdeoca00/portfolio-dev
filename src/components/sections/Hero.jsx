@@ -1,4 +1,6 @@
 import React from 'react';
+import { FileText, ExternalLink } from 'lucide-react';
+
 import { TerminalWindow } from '../ui/TerminalWindow';
 import { ArrowUpRight, Download, ShieldCheck, Code2 } from 'lucide-react';
 
@@ -39,6 +41,26 @@ export const Hero = ({ onNavigateProjects }) => {
           >
             <span>&lt;/&gt; Ver Proyectos</span>
           </button>
+                    {/* Fila de Botones de Acción */}
+          <div className="flex flex-wrap items-center gap-3 pt-2">
+           
+
+        
+
+            {/* Botón Chico: Mira mi CV */}
+            <a
+              href="/cv-ivan-montes-de-oca.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 bg-[#12131a] border border-cyber-emerald/40 text-cyber-emerald font-mono text-xs px-3.5 py-2.5 rounded-xl hover:bg-cyber-emerald/10 hover:border-cyber-emerald transition-all shadow-sm"
+              title="Abrir CV en formato PDF"
+            >
+              <FileText size={14} />
+              <span>Mira mi CV</span>
+              <ExternalLink size={12} />
+            </a>
+          </div>
+
 
 
             <a
