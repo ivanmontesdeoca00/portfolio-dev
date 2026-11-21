@@ -2,22 +2,56 @@ import React from 'react';
 import { Terminal, Shield } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
-export const Navbar = () => {
+export const Navbar = ({ currentView, setCurrentView }) => {
+  const navItems = [
+    { id: 'about', label: 'Sobre Mí' },
+    { id: 'projects', label: 'Proyectos' },
+    { id: 'experience', label: 'Trayectoria' },
+    { id: 'contact', label: 'Contacto' },
+  ];
+
   return (
     <header className="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-      <nav className="w-full max-w-5xl bg-cyber-card/70 backdrop-blur-md border border-cyber-border rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
-        <a href="#" className="flex items-center gap-2 text-white font-mono font-semibold text-sm hover:text-cyber-emerald transition-colors">
+      <nav className="w-full max-w-5xl bg-cyber-card/80 backdrop-blur-md border border-cyber-border rounded-2xl px-6 py-3 flex items-center justify-between shadow-2xl">
+        
+        {/* Terminal Logo -> Vuelve al inicio */}
+        <button
+          onClick={() => {
+            setCurrentView('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className={`flex items-center gap-2 font-mono font-semibold text-sm transition-colors ${
+            currentView === 'home' ? 'text-cyber-emerald' : 'text-white hover:text-cyber-emerald'
+          }`}
+        >
           <Terminal size={18} className="text-cyber-emerald" />
           <span>ivan@dev:~#</span>
-        </a>
+        </button>
 
-        <div className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-400">
-          <a href="#about" className="hover:text-cyber-emerald transition-colors">Sobre Mí</a>
-          <a href="#projects" className="hover:text-cyber-emerald transition-colors">Proyectos</a>
-          <a href="#experience" className="hover:text-cyber-emerald transition-colors">Trayectoria</a>
-          <a href="#contact" className="hover:text-cyber-emerald transition-colors">Contacto</a>
+        {/* Links de navegación por vistas */}
+        <div className="hidden md:flex items-center gap-2 text-sm font-medium">
+          {navItems.map((item) => {
+            const isActive = currentView === item.id;
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  setCurrentView(item.id);
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className={`px-3 py-1.5 rounded-xl font-mono text-xs transition-all ${
+                  isActive
+                    ? 'bg-cyber-emerald text-black font-semibold shadow-lg shadow-cyber-emerald/20'
+                    : 'text-gray-400 hover:text-white hover:bg-cyber-cardHover'
+                }`}
+              >
+                {item.label}
+              </button>
+            );
+          })}
         </div>
 
+        {/* Redes e Insignia */}
         <div className="flex items-center gap-3">
           <a
             href="https://github.com/ivanmontesdeoca00"
@@ -37,13 +71,16 @@ export const Navbar = () => {
           >
             <FaLinkedin size={18} />
           </a>
-          <a
-            href="#projects"
+          <button
+            onClick={() => {
+              setCurrentView('projects');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="hidden sm:flex items-center gap-1.5 text-xs font-mono font-medium bg-cyber-emerald/10 text-cyber-emerald border border-cyber-emerald/30 px-3 py-1.5 rounded-lg hover:bg-cyber-emerald/20 transition-all"
           >
             <Shield size={14} />
             <span>eJPT Path</span>
-          </a>
+          </button>
         </div>
       </nav>
     </header>
